@@ -37,7 +37,7 @@ export function Footer() {
                   key={link.targetId}
                   type="button"
                   onClick={() => scrollToSection(link.targetId)}
-                  className="w-fit text-sm text-slate-400 transition hover:text-white"
+                  className="w-fit text-sm text-slate-400 transition hover:text-white cursor-pointer"
                 >
                   {link.label}
                 </button>

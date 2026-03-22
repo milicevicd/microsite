@@ -18,7 +18,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   const baseClasses =
-    'inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-lime-400 focus:ring-offset-2'
+    'inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-lime-400 focus:ring-offset-2 cursor-pointer'
 
   const variantClasses = {
     primary: 'bg-lime-500 text-slate-950 hover:bg-lime-400',

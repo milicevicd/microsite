@@ -41,7 +41,7 @@ export function Header() {
           aria-label="Go to top of page"
         >
           <span className="inline-block h-2.5 w-2.5 rounded-full bg-lime-400 shadow-[0_0_20px_rgba(163,230,53,0.55)] transition-transform duration-300 group-hover:scale-110" />
-          <span className="text-sm font-semibold uppercase tracking-[0.38em] text-white/95 transition group-hover:text-white">
+          <span className="text-sm font-semibold uppercase tracking-[0.38em] text-white/95 transition group-hover:text-white cursor-pointer">
             ASI<span className="text-lime-400">OSO</span>
           </span>
         </button>
@@ -54,7 +54,7 @@ export function Header() {
               onClick={() => scrollToSection(item.targetId)}
               className={cn(
                 'rounded-full px-4 py-2 text-sm font-medium text-slate-200 transition-all duration-200',
-                'hover:bg-white/10 hover:text-white',
+                'hover:bg-white/10 hover:text-white cursor-pointer',
               )}
             >
               {item.label}

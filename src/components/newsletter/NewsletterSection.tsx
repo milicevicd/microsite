@@ -70,7 +70,7 @@ export function NewsletterSection() {
 
                   <button
                     type="submit"
-                    className="rounded-full bg-lime-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-lime-300"
+                    className="rounded-full bg-lime-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-lime-300 cursor-pointer"
                   >
                     Subscribe
                   </button>

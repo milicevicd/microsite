@@ -7,7 +7,7 @@ type FocusCardProps = {
 
 export function FocusCard({ item }: FocusCardProps) {
   return (
-    <article className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+    <article className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer">
       <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-lime-400 via-emerald-400 to-lime-300 opacity-80" />
 
       <div className="flex h-full flex-col">
