@@ -4,6 +4,8 @@ import { VideoModal } from "../components/hero/VideoModal";
 import { FocusSection } from "../components/focus/FocusSection";
 import { Header } from "../components/layout/Header";
 import { NewsSection } from "../components/news/NewsSection";
+import { NewsletterSection } from "../components/newsletter/NewsletterSection";
+import { Footer } from "../components/layout/Footer";
 
 export function HomePage() {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
@@ -17,8 +19,8 @@ export function HomePage() {
 
             <FocusSection />
             <NewsSection />
-            <section>Newsletter</section>
-            <section>Footer</section>
+            <NewsletterSection />
+            <Footer />
     </main>
     </>
   )
