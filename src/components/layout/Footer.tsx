@@ -13,7 +13,7 @@ export function Footer() {
 
   return (
     <footer className="border-t border-white/10 bg-slate-950 text-white">
-      <Container className="py-10">
+      <Container className="pt-14 pb-10">
         <div className="grid gap-10 md:grid-cols-3">
           <div>
             <div className="text-sm font-semibold uppercase tracking-[0.35em] text-white">
