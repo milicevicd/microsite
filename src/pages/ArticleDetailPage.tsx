@@ -6,6 +6,16 @@ import { formatDate } from '../utils/formatDate'
 import { NewsErrorState } from '../components/news/NewsState'
 import { NewsSkeleton } from '../components/news/NewsSkeleton'
 
+function generateSummary(description: string) {
+  const trimmed = description?.trim() || ''
+
+  if (trimmed.length <= 120) {
+    return trimmed
+  }
+
+  return trimmed.slice(0, 120) + '...'
+}
+
 export function ArticleDetailPage() {
   const { id } = useParams()
   const [searchParams] = useSearchParams()
@@ -54,8 +64,8 @@ export function ArticleDetailPage() {
         <Container>
           <div className="mb-8">
             <Link
-              to="/#news"
-              className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-900 transition hover:bg-slate-50"
+              to="/"
+              className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-900 transition hover:bg-slate-50 hover:border-slate-400"
             >
               <ArrowLeft className="h-4 w-4" />
               Back to home
@@ -74,8 +84,8 @@ export function ArticleDetailPage() {
         <Container>
           <div className="mb-8">
             <Link
-              to="/#news"
-              className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-900 transition hover:bg-slate-50"
+              to="/"
+              className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-900 transition hover:bg-slate-50 hover:border-slate-400"
             >
               <ArrowLeft className="h-4 w-4" />
               Back to home
@@ -99,7 +109,7 @@ export function ArticleDetailPage() {
         <div className="mb-8">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-900 transition hover:bg-slate-50"
+            className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-900 transition hover:bg-slate-50 hover:border-slate-400"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to home
@@ -108,11 +118,11 @@ export function ArticleDetailPage() {
 
         <article className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm">
           <div className="grid lg:grid-cols-[1.15fr_0.85fr]">
-            <div className="aspect-[16/10] bg-slate-100 lg:aspect-auto">
+            <div className="aspect-[16/10] bg-slate-100 lg:aspect-auto overflow-hidden">
               <img
                 src={article.image}
                 alt={article.title}
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover transition duration-500 hover:scale-105"
               />
             </div>
 
@@ -122,7 +132,9 @@ export function ArticleDetailPage() {
                   {article.category}
                 </span>
 
-                <span className="text-sm font-medium text-slate-500">{article.source}</span>
+                <span className="text-sm font-medium text-slate-500">
+                  {article.source}
+                </span>
               </div>
 
               <h1 className="mt-6 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
@@ -141,10 +153,9 @@ export function ArticleDetailPage() {
                 <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-slate-700">
                   Summary
                 </h2>
+
                 <p className="mt-3 text-sm leading-7 text-slate-600">
-                  This detail page presents the selected item from the live feed within the
-                  microsite experience, while still allowing the user to continue to the
-                  original external source.
+                  {generateSummary(article.description)}
                 </p>
               </div>
 
@@ -154,7 +165,7 @@ export function ArticleDetailPage() {
                     href={originalUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+                    className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 hover:scale-[1.02]"
                   >
                     Open original article
                     <ArrowUpRight className="h-4 w-4" />
