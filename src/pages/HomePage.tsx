@@ -3,10 +3,11 @@ import { HeroSection } from "../components/hero/HeroSection";
 import { VideoModal } from "../components/hero/VideoModal";
 import { FocusSection } from "../components/focus/FocusSection";
 import { Header } from "../components/layout/Header";
+import { NewsSection } from "../components/news/NewsSection";
 
 export function HomePage() {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-
+  
   return (
     <>
     <Header />
@@ -15,7 +16,7 @@ export function HomePage() {
         <VideoModal isOpen={isVideoModalOpen} onClose={() => setIsVideoModalOpen(false)} />
 
             <FocusSection />
-            <section id="news">News</section>
+            <NewsSection />
             <section>Newsletter</section>
             <section>Footer</section>
     </main>
