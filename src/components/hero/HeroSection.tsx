@@ -1,6 +1,7 @@
 import { Button } from "../common/Button";
 import { Container } from "../common/Container";
 import { Play, TrendingUp } from "lucide-react";
+import { Counter } from "../common/Counter";
 
 type HeroSectionProps = {
   onWatchVideo: () => void;
@@ -48,7 +49,9 @@ export function HeroSection({ onWatchVideo }: HeroSectionProps) {
 
             <div className="mt-10 grid max-w-lg grid-cols-1 gap-4 sm:grid-cols-3">
               <div className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur">
-                <p className="text-2xl font-semibold text-white">120+</p>
+                <p className="text-2xl font-semibold text-white">
+                    <Counter target={120} />
+                </p>
                 <p className="mt-1 text-sm text-slate-300">digital campaigns launched</p>
               </div>
 
