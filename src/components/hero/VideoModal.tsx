@@ -22,7 +22,7 @@ export function VideoModal({ isOpen, onClose }: VideoModalProps) {
         <div className="aspect-video w-full">
           <iframe
             className="h-full w-full"
-            src="https://www.youtube.com/embed/7Q2vsJ4-tMU?si=J9iU6dMvsA4N3vM5"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&autoplay=1"
             title="Brand video presentation"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen

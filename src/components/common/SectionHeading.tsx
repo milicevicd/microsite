@@ -25,12 +25,12 @@ const alignment = align === "center" ? "text-center items-center" : "text-left i
                 </span>
             ) : null}
 
-            <h2 className="max-w-3xl text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+            <h2 className="max-w-2xltext-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
                 {title}
             </h2>
-            
+
             {description ? (
-                <p className="max-w-2xl text-base leading-7 text-slate-600">
+                <p className="max-w-xl text-base leading-7 text-slate-600">
                     {description}
                 </p>
             ) : null}
