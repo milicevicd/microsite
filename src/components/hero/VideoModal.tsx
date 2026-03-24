@@ -13,7 +13,7 @@ export function VideoModal({ isOpen, onClose }: VideoModalProps) {
         <button
           type="button"
           onClick={onClose}
-          className="absolute right-4 top-4 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 "
+          className="absolute right-4 top-4 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 cursor-pointer"
           aria-label="Close video modal"
         >
           <X className="h-5 w-5" />
@@ -22,7 +22,7 @@ export function VideoModal({ isOpen, onClose }: VideoModalProps) {
         <div className="aspect-video w-full">
           <iframe
             className="h-full w-full"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&autoplay=1"
+            src="https://www.youtube.com/embed/9No-FiEInLA?autoplay=1&mute=1"
             title="Brand video presentation"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen

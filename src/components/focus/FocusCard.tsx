@@ -1,5 +1,5 @@
-import { ArrowUpRight } from 'lucide-react'
-import type { FocusItem } from '../../data/focusItemts'
+import { ArrowUpRight } from "lucide-react"
+import type { FocusItem } from "../../data/focusItemts"
 
 type FocusCardProps = {
   item: FocusItem

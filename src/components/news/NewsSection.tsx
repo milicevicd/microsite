@@ -97,7 +97,7 @@ export function NewsSection() {
                     <button
                       type="button"
                       onClick={handleLoadMore}
-                      className="rounded-full bg-slate-950 text-white px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+                      className="rounded-full bg-slate-950 text-white px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 cursor-pointer"
                     >
                       Load more
                     </button>
@@ -107,7 +107,7 @@ export function NewsSection() {
                     <button
                       type="button"
                       onClick={handleLoadLess}
-                      className="rounded-full border border-lime-400/40 bg-transparent px-6 py-3 text-sm font-semibold text-slate-900 transition hover:border-lime-400 hover:bg-lime-50"
+                      className="rounded-full border border-lime-400/40 bg-transparent px-6 py-3 text-sm font-semibold text-slate-900 transition hover:border-lime-400 hover:bg-lime-50 cursor-pointer"
                     >
                       Load less
                     </button>
