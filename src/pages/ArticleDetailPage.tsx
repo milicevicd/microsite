@@ -1,5 +1,5 @@
 import { ArrowLeft, ArrowUpRight } from 'lucide-react'
-import { Link, useParams, useSearchParams } from 'react-router-dom'
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { Container } from '../components/common/Container'
 import { useNewsArticles } from '../hooks/useNewsArticles'
 import { formatDate } from '../utils/formatDate'
@@ -19,11 +19,16 @@ function generateSummary(description: string) {
 export function ArticleDetailPage() {
   const { id } = useParams()
   const [searchParams] = useSearchParams()
+  const navigate = useNavigate()
   const originalUrl = searchParams.get('url')
 
   const { data, isLoading, error, refetch } = useNewsArticles()
 
   const article = data?.find((item) => item.id === id)
+
+  const backToNews = () => {
+    navigate('/#news')
+  }
 
   if (isLoading) {
     return (
@@ -63,13 +68,13 @@ export function ArticleDetailPage() {
       <main className="min-h-screen bg-white py-20">
         <Container>
           <div className="mb-8">
-            <Link
-              to="/"
-              className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-900 transition hover:bg-slate-50 hover:border-slate-400"
+            <button
+              onClick={backToNews}
+              className="cursor-pointer inline-flex items-center gap-2 rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-900 transition hover:bg-slate-50 hover:border-slate-400"
             >
               <ArrowLeft className="h-4 w-4" />
               Back to home
-            </Link>
+            </button>
           </div>
 
           <NewsErrorState onRetry={() => refetch()} />
@@ -83,13 +88,13 @@ export function ArticleDetailPage() {
       <main className="min-h-screen bg-white py-20">
         <Container>
           <div className="mb-8">
-            <Link
-              to="/"
+            <button
+              onClick={backToNews}
               className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-900 transition hover:bg-slate-50 hover:border-slate-400"
             >
               <ArrowLeft className="h-4 w-4" />
               Back to home
-            </Link>
+            </button>
           </div>
 
           <div className="rounded-[2rem] border border-slate-200 bg-slate-50 p-10 text-center">
@@ -107,13 +112,13 @@ export function ArticleDetailPage() {
     <main className="min-h-screen bg-white py-14 sm:py-20">
       <Container>
         <div className="mb-8">
-          <Link
-            to="/"
+          <button
+            onClick={backToNews}
             className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-900 transition hover:bg-slate-50 hover:border-slate-400"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to home
-          </Link>
+          </button>
         </div>
 
         <article className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm">
