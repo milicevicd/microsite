@@ -47,9 +47,21 @@ function inferCategory(title: string, description: string) {
   return 'strategy'
 }
 
+function createArticleId(title: string, index: number) {
+  const slug = title
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .trim()
+    .replace(/\s+/g, '-')
+
+  return `${index}-${slug}`
+}
+
 export async function fetchNewsArticles(): Promise<NewsArticle[]> {
   if (!API_KEY) {
-    throw new Error('Missing NewsAPI key')
+    throw new Error(
+      'Missing NewsAPI key. Please add VITE_NEWS_API_KEY to your .env file.'
+    )
   }
 
   const params = new URLSearchParams({
@@ -78,7 +90,7 @@ export async function fetchNewsArticles(): Promise<NewsArticle[]> {
       const description = item.description || 'No description available.'
 
       return {
-        id: `${index}-${item.title}`,
+        id: createArticleId(item.title, index),
         title: item.title,
         description,
         image:
